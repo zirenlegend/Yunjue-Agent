@@ -17,7 +17,12 @@ def ensure_isolated_venv_exists() -> None:
     """Ensure the isolated virtual environment exists, creating it if necessary."""
     if not ISOLATED_VENV_PATH.exists():
         logger.info(f"Creating isolated virtual environment at {ISOLATED_VENV_PATH}")
-        subprocess.run(["uv", "venv", str(ISOLATED_VENV_PATH)], check=True)
+        subprocess.run(
+            ["uv", "venv", str(ISOLATED_VENV_PATH)],
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
 
 
 # Automatically ensure the isolated virtual environment exists when this module is imported

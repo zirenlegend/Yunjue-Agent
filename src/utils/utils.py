@@ -116,7 +116,10 @@ async def call_codex_exec(prompt: str, output_file: str = None) -> tuple[str, bo
                     try:
                         logger.info(f"Installing dependencies for tool {output_file}: {deps}")
                         subprocess.run(
-                            ["uv", "pip", "install", "--python", str(ISOLATED_PYTHON_PATH)] + deps, check=True
+                            ["uv", "pip", "install", "--python", str(ISOLATED_PYTHON_PATH)] + deps,
+                            check=True,
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL,
                         )
                     except subprocess.CalledProcessError as e:
                         error_message = f"Failed to install dependencies for tool {output_file}: {e}"
@@ -187,7 +190,12 @@ print(result)
     if deps:
         try:
             logger.info(f"Installing dependencies for tool {tool_filename}: {deps}")
-            subprocess.run(["uv", "pip", "install", "--python", str(ISOLATED_PYTHON_PATH)] + deps, check=True)
+            subprocess.run(
+                ["uv", "pip", "install", "--python", str(ISOLATED_PYTHON_PATH)] + deps,
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
         except subprocess.CalledProcessError as e:
             logger.error(f"Failed to install dependencies for tool {tool_filename}: {e}")
             return False, historical_call_records
@@ -206,7 +214,7 @@ print(result)
                     check=True,
                     timeout=300,
                 )
-                print("proc.stdout: ", proc.stdout)
+                logger.debug("Tool execution output: %s", proc.stdout)
             except subprocess.TimeoutExpired as e:
                 logger.error(f"Tool execution timed out: {e}")
                 results.append(

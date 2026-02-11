@@ -648,7 +648,10 @@ def load_dynamic_tools(
                 try:
                     logger.info(f"Installing dependencies for tool {file_path}: {deps}")
                     subprocess.run(
-                        ["uv", "pip", "install", "--python", str(ISOLATED_PYTHON_PATH)] + deps, check=True
+                        ["uv", "pip", "install", "--python", str(ISOLATED_PYTHON_PATH)] + deps,
+                        check=True,
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
                     )
                 except subprocess.CalledProcessError as e:
                     logger.error(f"Failed to install dependencies for tool {file_path}: {e}")

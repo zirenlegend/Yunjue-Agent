@@ -11,7 +11,7 @@ from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, Tool
 from langchain_core.runnables import RunnableConfig
 from langgraph.types import Command
 from pydantic import BaseModel, Field
-
+from langgraph.config import get_stream_writer
 from src.agents import ReActAgent
 from src.schema.types import State, TaskExecutionContext, LLMType
 from src.config.config import Configuration
@@ -424,6 +424,7 @@ async def executor_node(
     agent_input["messages"].append(HumanMessage(content=task_info))
     agent_input["messages"].extend(worker_exist_messages)
     # Use stream to handle recursion limit and collect all messages
+    stream_writer = get_stream_writer()
     all_messages = []
     recur_limit_exceeded = False
     final_state = None
@@ -433,6 +434,7 @@ async def executor_node(
             stream_mode="values",
             config={"recursion_limit": 1000}
         ):
+            stream_writer(stream_state)
             final_state = stream_state
             if isinstance(stream_state, dict):
                 # Check if tool_steps has reached max_steps to detect recur limit exceeded
