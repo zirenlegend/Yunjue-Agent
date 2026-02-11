@@ -7,6 +7,7 @@
 <div align="center">
 
 [![BLOG](https://img.shields.io/badge/Blog-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.yunjuetech.com/en)
+[![Project HomePage](https://img.shields.io/badge/Project%20HomePage-00A86B?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.yunjuetech.com/Yunjue-Agent/)
 [![GITHUB](https://img.shields.io/badge/Github-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YunjueTech/Yunjue-Agent)
 [![Paper](https://img.shields.io/badge/Paper-De2c33?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](tech_report/YunjueAgentTechReport.pdf)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue?style=for-the-badge)](https://huggingface.co/datasets/YunjueTech/Yunjue-Agent-Traces)
