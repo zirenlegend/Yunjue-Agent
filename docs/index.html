@@ -255,37 +255,40 @@
                 </a>
               </span>
 
-              <span class="link-block">
-                <a href="https://huggingface.co/datasets/YunjueTech/Yunjue-Agent-Traces" target="_blank"
-                class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" width="20">
-                </span>
-                <span>huggingface</span>
-              </a>
-            </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	            <span class="link-block">
+	              <a href="https://huggingface.co/datasets/YunjueTech/Yunjue-Agent-Traces" target="_blank"
+	                class="external-link button is-normal is-rounded is-dark">
+	                <span class="icon">
+	                  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" width="20">
+	                </span>
+	                <span>huggingface</span>
+	              </a>
+	            </span>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 </section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Conventional agent systems often struggle in open-ended environments where task distributions continuously drift and external supervision is scarce. Their reliance on static toolsets or offline training lags behind these dynamics, leaving the system's capability boundaries rigid and unknown. To address this, we propose the In-situ Self-Evolving paradigm. This approach treats sequential task interactions as a continuous stream of experience, enabling the system to distill short-term execution feedback into long-term, reusable capabilities without access to ground-truth labels. Within this framework, we identify tool evolution as the critical pathway for capability expansion, which provides verifiable, binary feedback signals. Within this framework, we develop Yunjue Agent, a system that iteratively synthesizes, optimizes, and reuses tools to navigate emerging challenges. To optimize evolutionary efficiency, we further introduce a Parallel Batch Evolution strategy. Empirical evaluations across five diverse benchmarks under a zero-start setting demonstrate significant performance gains over proprietary baselines. Additionally, complementary warm-start evaluations confirm that the accumulated general knowledge can be seamlessly transferred to novel domains. Finally, we propose a novel metric to monitor evolution convergence, serving as a function analogous to training loss in conventional optimization. We open-source our codebase, system traces, and evolved tools to facilitate future research in resilient, self-evolving intelligence.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+	        <div class="content has-text-justified">
+	          <p>
+	            Conventional agent systems often struggle in open-ended environments where task distributions continuously drift and external supervision is scarce. Their reliance on static toolsets or offline training lags behind these dynamics, leaving the system's capability boundaries rigid and unknown. To address this, we propose the In-situ Self-Evolving paradigm. This approach treats sequential task interactions as a continuous stream of experience, enabling the system to distill short-term execution feedback into long-term, reusable capabilities without access to ground-truth labels. Within this framework, we identify tool evolution as the critical pathway for capability expansion, which provides verifiable, binary feedback signals. Within this framework, we develop Yunjue Agent, a system that iteratively synthesizes, optimizes, and reuses tools to navigate emerging challenges. To optimize evolutionary efficiency, we further introduce a Parallel Batch Evolution strategy. Empirical evaluations across five diverse benchmarks under a zero-start setting demonstrate significant performance gains over proprietary baselines. Additionally, complementary warm-start evaluations confirm that the accumulated general knowledge can be seamlessly transferred to novel domains. Finally, we propose a novel metric to monitor evolution convergence, serving as a function analogous to training loss in conventional optimization. We open-source our codebase, system traces, and evolved tools to facilitate future research in resilient, self-evolving intelligence.
+	          </p>
+          <div class="mt-5 has-text-centered">
+            <img src="static/images/overview.jpeg" alt="Yunjue Agent overview" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 </section>
 <!-- End paper abstract -->
 
@@ -400,7 +403,7 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-      <h2 class="title is-3 has-text-centered">You Describe the Skill, Yunjue Handles the Rest</h2>
+      <h2 class="title is-3 has-text-centered">You Describe Skill, Yunjue Handles Rest</h2>
       <div class="content has-text-justified">
       <p>
         <strong>Yunjue Agent</strong> streamlines the path from expertise to action. By simply providing a <code>SKILL.md</code>—as we believe high-level experience remains a human-driven asset—the agent autonomously generates the necessary tools to execute those skills. Experience the seamless transformation of documented knowledge into functional automation.
